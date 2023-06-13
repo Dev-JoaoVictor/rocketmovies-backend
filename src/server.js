@@ -10,5 +10,11 @@ app.get("/teste/:id/:user", (request, response) => {
   `);
 });
 
+app.get("/user", (request, response) => {
+  const { page, limit } = request.query;
+
+  response.send(`Pagina: ${page} Limite ${limit}`);
+});
+
 const PORT = 3333;
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
